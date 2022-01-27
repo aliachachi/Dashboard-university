@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='Style.css')}}"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <title>Dash Board</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="Logo"><img src="{{url_for('static',filename='lg.png')}}" class="logo"></div>
+            <div class="title"><h1> Dashboard university informations </h1></div>
+            <div class="Button">
+                <button class="Actualiser" onclick="actualiser()">
+                    Actualiser 
+                </button>
+            </div>
+        </div>
+        <div class="Menu">
+            <div class="element-menu">
+                <a href="{{url_for('index')}}" class="element">Student</a><br>
+                <a href="{{url_for('A_propos')}}" class="element">About</a><br>
+                <a href="{{url_for('data')}}" class="element">Show Data</a><br>
+                <a href="{{url_for('quit')}}" class="element">Log Out</a>
+            </div>
+        </div>
+
+        <div class="Main">
+            <br> <br> <br>
+            {% block content %}
+                <div class="main-element">
+                    <h1 class="main-h1">
+                        Welcome to our university
+                    </h1>
+                    <br> <br>
+                    <br>
+                    <h3 class="main-h3">Put your informations to see your results :  </h3> <br> <br>
+                    <div class="main-h3">
+                        <input class="main-h3-field" type="text" placeholder="Name"> <br> <br>
+                        <input class="main-h3-field" type="text" placeholder="FirstName"> <br> <br>
+                        <input class="main-h3-field" type="text" placeholder="ID"> <br> <br>
+                        <input class="main-h3-field" type="email" placeholder="Email address"> <br> <br>
+                        <textarea placeholder="Message"></textarea> <br> <br>
+                        <button class="Actualiser">
+                            Show Result
+                        </button>
+                      </div> 
+                      
+                </div>
+            {% endblock %}
+        </div>
+        <div class="Footer">
+            <h1>Contact Us:</h1>
+            <div class="input-group">
+              <input class="input-group-field" type="text" placeholder="Name"> <br> <br>
+              <input class="input-group-field" type="email" placeholder="Email address"> <br> <br>
+              <textarea placeholder="Message"></textarea>
+            </div> <br>
+            <button class="Actualiser">
+                Contact
+            </button>
+          </div>
+        </div>
+       
+    </div>
+</body>
+
+<script src="{{url_for('static',filename='Script.js')}}"></script>
+
+</html>
