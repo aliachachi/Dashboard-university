@@ -1,5 +1,5 @@
 # Flask Dashboard -university
-dashboard to describe a university informations using charts
+- dashboard to analyze university informations using different charts (bar , line charts)
 
 # Languages
 - Python
